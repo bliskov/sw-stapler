@@ -23,7 +23,6 @@ left join battery_usage on battery_usage.battery_id = battery.id and battery_usa
 left join `availability` on availability.name = battery.name and availability.voltage = battery.voltage
 WHERE availability.id != '' and availability.price IS NOT NULL and availability.name IS NOT NULL limit 5000;
 
-
 select distinct battery.id as additionalText, availability.id as ordernumber, availability.id as mainnumber, availability.name, CAST(availability.price/100 as DECIMAL(10,2)) price, availability.supplier_id as supplier, battery.slug as description, 19 as tax, 1 as active from battery
 left join `availability` on availability.name = battery.name and availability.voltage = battery.voltage
 WHERE availability.id != '' and availability.price IS NOT NULL and availability.name IS NOT NULL limit 5000;
